@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Microsoft Yahei", sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding:20px;
+}
+header{
+    text-align:center;
+    border-bottom:1px solid #ccc;
+    padding-bottom:10px;
+}
+.form-table{
+    margin-bottom:30px;
+}
+.form-table td{
+    padding:8px;
+}
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:#666;
+    border-top:1px solid #ccc;
+    padding-top:10px;
+}
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+th,td{
+    border:1px solid #999;
+    padding:6px;
+}

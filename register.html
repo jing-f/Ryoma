@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header>
+        <h1>用户注册页面</h1>
+    </header>
+
+    <!-- 主体区域 -->
+    <main>
+        <!-- 注册表单 -->
+        <form id="registerForm">
+            <table class="form-table">
+                <tr>
+                    <td><label for="username">用户名：</label></td>
+                    <td><input type="text" name="username" id="username" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">密码：</label></td>
+                    <td><input type="password" name="password" id="password" placeholder="6-16位字符"></td>
+                </tr>
+                <tr>
+                    <td><label for="confirmPassword">确认密码：</label></td>
+                    <td><input type="password" name="confirmPassword" id="confirmPassword"></td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td>
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="male">男</label>
+                        <label>
+                            <input type="radio" name="gender" value="female">女
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="birthday">出生日期：</label></td>
+                    <td><input type="date" name="birthday" id="birthday"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">邮箱：</label></td>
+                    <td><input type="email" name="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">手机号：</label></td>
+                    <td><input type="tel" name="phone" id="phone" pattern="[0-9]{11}"></td>
+                </tr>
+                <tr>
+                    <td>兴趣爱好：</td>
+                    <td>
+                        <input type="checkbox" name="hobby" value="reading" id="read">
+                        <label for="read">阅读</label>
+                        <input type="checkbox" name="hobby" value="game" id="game">
+                        <label for="game">游戏</label>
+                        <input type="checkbox" name="hobby" value="sport" id="sport">
+                        <label for="sport">运动</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="avatar">头像上传：</label></td>
+                    <td><input type="file" name="avatar" id="avatar" accept="image/*" multiple></td>
+                </tr>
+                <tr>
+                    <td><label for="city">所在城市：</label></td>
+                    <td>
+                        <select name="city" id="city">
+                            <option value="changsha">长沙</option>
+                            <option value="changde" selected>常德</option>
+                            <option value="zhangjiajie">张家界</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="bio">个人简介：</label></td>
+                    <td><textarea name="bio" id="bio" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit">注册</button>
+                        <button type="reset">重置</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <!-- 注册须知表格（colspan合并单元格） -->
+        <section class="notice">
+            <h2>注册须知</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">会员权益说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>普通会员</td>
+                        <td>基础浏览权限</td>
+                    </tr>
+                    <tr>
+                        <td>VIP会员</td>
+                        <td>全部功能权限</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 无序列表 ul：注意事项 -->
+        <section>
+            <h3>注册注意事项</h3>
+            <ul>
+                <li>用户名不可重复</li>
+                <li>密码区分大小写</li>
+                <li>手机号仅用于账号验证</li>
+            </ul>
+        </section>
+
+        <!-- 有序列表 ol：注册步骤 -->
+        <section>
+            <h3>注册步骤</h3>
+            <ol>
+                <li>填写个人信息</li>
+                <li>阅读并同意注册须知</li>
+                <li>提交表单完成注册</li>
+            </ol>
+        </section>
+
+        <!-- 定义列表 dl：常见问题 -->
+        <section>
+            <h3>常见问题</h3>
+            <dl>
+                <dt>忘记密码怎么办？</dt>
+                <dd>通过绑定邮箱找回密码</dd>
+                <dt>如何修改个人资料？</dt>
+                <dd>登录账号后进入个人中心修改</dd>
+            </dl>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>版权所有 © 2026 用户注册系统</p>
+    </footer>
+
+    <!-- JS监听表单提交，控制台打印数据 -->
+    <script>
+        const form = document.getElementById('registerForm');
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            const formData = new FormData(form);
+            const dataObj = {};
+            for(let [key,val] of formData){
+                dataObj[key] = val;
+            }
+            console.log("表单收集数据：", dataObj);
+            alert("表单数据已打印到浏览器控制台！");
+        })
+    </script>
+</body>
+</html>
