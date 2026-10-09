@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>二级水平导航菜单</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav>ul{
+    display: flex;
+}
+.nav>ul>li{
+    padding:12px 18px;
+    position:relative;
+}
+.nav>ul>li>a{
+    color:#000;
+    text-decoration:none;
+    font-size:20px;
+}
+.nav>ul>li:hover{
+    background:#333;
+}
+.nav>ul>li:hover>a{
+    color:#fff;
+}
+.sub{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#555;
+    display:none;
+}
+.sub li{
+    padding:10px 18px;
+    white-space:nowrap;
+}
+.sub li a{
+    color:#fff;
+    text-decoration:none;
+}
+.nav>ul>li:hover .sub{
+    display:block;
+}
+    </style>
+</head>
+<body>
+<p>欢迎访问湖南文理学院</p>
+<div class="nav">
+    <ul>
+        <li><a href="#">首页</a></li>
+        <li>
+            <a href="#">教学院(部)</a>
+            <ul class="sub">
+                <li><a href="#">计算机与电气工程学院</a></li>
+                <li><a href="#">芙蓉学院</a></li>
+            </ul>
+        </li>
+        <li><a href="#">党群机构</a></li>
+        <li><a href="#">行政教辅机构</a></li>
+        <li><a href="#">教学科研</a></li>
+        <li><a href="#">招生就业</a></li>
+        <li><a href="#">国际交流</a></li>
+        <li><a href="#">数字图书馆</a></li>
+    </ul>
+</div>
+</body>
+</html>
